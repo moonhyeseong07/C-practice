@@ -1,15 +1,22 @@
 #include <stdio.h>
 
 int main() {
-    char a[5];  
-    int i;
-
-    for (i = 0; i < 5; i++) 
-        scanf(" %c", &a[i]);  
+    int a[100];
+    int i, input, count = 0;
 
 
-    for (i = 4; i >= 0; i--) 
-        printf("%c", a[i]);
+    while (count < 100) {
+        scanf("%d", &input);
+        
+        if (input == 0)
+            break;
+        
+        a[count] = input;
+        count++;
+    }
+
+    for (i = count - 1; i >= 0; i--) 
+        printf("%d ", a[i]);
     
     return 0;
 }
