@@ -1,19 +1,24 @@
-#include<stdio.h>
-int n,arr[10000001],m,i,t;
-int main(void) {
+#include <stdio.h>
+int main() {
+	int i,j,tmp,n,com[n];
 	scanf("%d",&n);
-	for(i=0;i<n;i++)
-	{
-		scanf("%d",&t);
-		arr[t]=1;
+	for(i=1;i<=n;i++){
+		scanf("%d",&com[i]);
 	}
-	scanf("%d",&m);
-	for(i=0;i<m;i++){
-		scanf("%d",&t);
-		if(arr[t]==1){
-			printf("1 ");
+	for(i=1;i<=n;i++){
+		printf("%d: ",i);
+		for(j=1;j<=n;j++){
+			if(i==j)
+			{
+				continue;
+			}
+				if(com[i]>com[j])
+					printf("> ");
+				else if(com[i]<com[j])
+					printf("< ");
+				else printf("= ");
 		}
-		else printf("0 ");
+		printf("\n");
 	}
 	return 0;
 }
