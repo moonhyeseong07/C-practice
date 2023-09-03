@@ -1,23 +1,22 @@
 #include <stdio.h>
+
 int main()
 {
-	int a,b;
-	char c;
-	scanf("%d%c%d",&a,&c,&b);
-	switch(c)
+	int i,n,c;
+	int a[10000];
+	scanf("%d",&n);
+	for(i=1;i<=n;i++)
 	{
-		case'+':
-			printf("%d",a+b);
-			break;
-		case'-':
-			printf("%d",a-b);
-			break;
-		case'*':
-			printf("%d",a*b);
-			break;
-		case'/':
-			printf("%.2f",(float)a/b);
-			break;			
+		scanf("%d",&a[i]);
 	}
+	c=a[1];
+	for(i=1;i<=n;i++)
+	{
+		if(a[i]<c)
+		{
+			c=a[i];
+		}
+	}
+	printf("%d\n",c);
 	return 0;
 }
