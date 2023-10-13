@@ -1,15 +1,14 @@
 #include <stdio.h>
 int main() {
-	int n,i,sum=1;
+	int n,k,min=100,max=0;
 	scanf("%d",&n);
-	printf("1");
-	for(i=2;i<n;++i){
-		if(n%i==0){
-			sum+=i;
-			printf(" + %d",i);
-		}
+	for(int i=0;i<n;++i){
+		scanf("%d",&k);
+		if(max<k)
+			max=k;
+		if(min>k)
+			min=k;
 	}
-	//n%i==0
-	printf(" = %d",sum);
+		printf("%d",max-min);
 	return 0;
 }
