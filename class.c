@@ -1,32 +1,13 @@
 #include <stdio.h>
-int i,k,n=8;
-int doublehash(int key)
+void f(int n)
 {
-	if(key>20) return 4;
-	else return 5;
-} 
-int hash(int key)
-{
-	return key%n;
+    if(n==0) return;
+	f(n/2);
+	printf("%d",n%2);
 }
-int main()
-{
-	int key;
-	int list[8]={0,0,10,3,2,5,0,0};
-	scanf("%d",&key);
-	int index=hash(key);
-	while(1)
-	{
-	if(list[index]==0)
-	{
-		list[index]=key;
-		break;
-	}
-		else{
-			k++;
-			index=(hash(key)+doublehash(key)*k)%n;
-		}
-	}
-	printf("%d",index);
+int main() {
+    int n;
+	scanf("%d",&n);
+	f(n);
 	return 0;
 }
